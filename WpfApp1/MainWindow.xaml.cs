@@ -54,30 +54,31 @@ namespace WpfApp1
             }
 
             bool result = true;
-            int age = int.Parse(txtAge.Text);
-            decimal houseSize = decimal.Parse(txtHouseSize.Text);
-            decimal paddockSize = decimal.Parse(txtPadockSize.Text);
+            bool isValidAge = int.TryParse(txtAge.Text, out int age);
+            bool isValidHouseSize = decimal.TryParse(txtHouseSize.Text, out decimal houseSize);
+            bool isValidPaddockSize = decimal.TryParse(txtPadockSize.Text, out decimal paddockSize);
 
+            string obscuredCreditCard = CreditCardHelper.ObscureCreditCardNumber(txtCreditCard.Text);
             MyProperties myProperties = new MyProperties();
             myProperties.HouseAge = age;
             myProperties.HouseSize = houseSize;
             myProperties.PaddockSize = paddockSize;
-            myProperties.CreditCardNumber = txtCreditCard.Text;
-            myProperties.Type = (string)cmbType.SelectedValue;
+            myProperties.CreditCardNumber = obscuredCreditCard;
+            myProperties.Type = (string) cmbType.SelectedValue;
 
-            if (result)
+            if (result && isValidAge && isValidHouseSize && isValidPaddockSize)
             {
                 Properties properties = null;
                 switch (cmbType.SelectedIndex)
                 {
                     case 0:
-                        properties = new HouseOwner(age, houseSize, paddockSize, txtCreditCard.Text);
+                        properties = new HouseOwner(age, houseSize, paddockSize, obscuredCreditCard);
                         break;
                     case 1:
-                        properties = new SmallBusinesseOwner(age, houseSize, paddockSize, txtCreditCard.Text);
+                        properties = new SmallBusinesseOwner(age, houseSize, paddockSize, obscuredCreditCard);
                         break;
                     case 2:
-                        properties = new Farmer(age, houseSize, paddockSize, txtCreditCard.Text);
+                        properties = new Farmer(age, houseSize, paddockSize, obscuredCreditCard);
                         break;
                     default:
                         MessageBox.Show("Program Error");
@@ -103,7 +104,7 @@ namespace WpfApp1
         {
             XmlSerializer serializer = new XmlSerializer(typeof(PropertyList));
             TextReader tr = new StreamReader("customer_info.xml");
-            propertyList = (PropertyList)serializer.Deserialize(tr);
+            propertyList = (PropertyList) serializer.Deserialize(tr);
             tr.Close();
         }
 

@@ -16,7 +16,7 @@ namespace WpfApp1
         {
             if (value is Properties)
             {
-                if (((Properties)value).HouseAge > 100)
+                if (((Properties)value).HouseAge > 50)
                 {
                     return Brushes.Red;
                 }

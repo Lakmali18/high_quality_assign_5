@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 namespace ConsoleApp1
 {
 
-    public enum CustomerTypes { HouseOwner, SmallBusinesseOwner, Farmer }
+    public enum CustomerTypes { HouseOwner, BusinesseOwner, Farmer }
 
     [XmlRoot("CustomerList")]
     [XmlInclude(typeof(HouseOwner))]

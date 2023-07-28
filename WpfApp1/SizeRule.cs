@@ -24,7 +24,7 @@ namespace WpfApp1
                 return new ValidationResult(false, "Wrong data");
             }
 
-            if (numVal <= min || numVal > max)
+            if (numVal < min || numVal > max)
             {
                 return new ValidationResult(false, "Out of Range");
             }

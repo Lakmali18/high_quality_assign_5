@@ -29,7 +29,7 @@ namespace ConsoleApp1
             {
                 HouseOwner blt = new HouseOwner(10, 200, 150,"8986987878765676");
                 nl.Add(blt);
-                SmallBusinesseOwner et = new SmallBusinesseOwner(30, 250, 200, "6709878905676787");
+                BusinessOwner et = new BusinessOwner(30, 250, 200, "6709878905676787");
                 nl.Add(et);
                 Farmer ft = new Farmer(50, 350, 250, "6767545454656766");
                 nl.Add(ft);

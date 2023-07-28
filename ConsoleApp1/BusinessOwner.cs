@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    public class SmallBusinesseOwner : Properties
+    public class BusinessOwner : Properties
     {
-        public SmallBusinesseOwner() { }
+        public BusinessOwner() { }
 
-        public SmallBusinesseOwner(int houseAge, decimal houseSize, decimal paddockSizze, string creditCardNo) : base(houseAge, houseSize, paddockSizze, creditCardNo)
+        public BusinessOwner(int houseAge, decimal houseSize, decimal paddockSizze, string creditCardNo) : base(houseAge, houseSize, paddockSizze, creditCardNo)
         {
 
         }

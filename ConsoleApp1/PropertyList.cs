@@ -8,11 +8,11 @@ using System.Xml.Serialization;
 namespace ConsoleApp1
 {
 
-    public enum CustomerTypes { HouseOwner, BusinesseOwner, Farmer }
+    public enum CustomerTypes { HouseOwner, BusinessOwner, Farmer }
 
     [XmlRoot("CustomerList")]
     [XmlInclude(typeof(HouseOwner))]
-    [XmlInclude(typeof(SmallBusinesseOwner))]
+    [XmlInclude(typeof(BusinessOwner))]
     [XmlInclude(typeof(Farmer))]
 
     public class PropertyList : IDisposable

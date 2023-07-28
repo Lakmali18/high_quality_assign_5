@@ -75,7 +75,7 @@ namespace WpfApp1
                         properties = new HouseOwner(age, houseSize, paddockSize, obscuredCreditCard);
                         break;
                     case 1:
-                        properties = new SmallBusinesseOwner(age, houseSize, paddockSize, obscuredCreditCard);
+                        properties = new BusinessOwner(age, houseSize, paddockSize, obscuredCreditCard);
                         break;
                     case 2:
                         properties = new Farmer(age, houseSize, paddockSize, obscuredCreditCard);
@@ -123,7 +123,7 @@ namespace WpfApp1
                 newProperties.CreditCardNumber = properties.CreditCardNumber;
                 string[] arrStr = properties.GetType().ToString().Split('.');
                 string fullType = arrStr[arrStr.Length - 1];
-                newProperties.Type = fullType.Substring(0, fullType.Length - 4);
+                newProperties.Type = fullType.Substring(0, fullType.Length);
                 DisplayProps.Add(newProperties);
             }
         }

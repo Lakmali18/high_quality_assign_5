@@ -50,7 +50,7 @@
     <Compile Include="Properties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertyList.cs" />
-    <Compile Include="SmallBusinesseOwner.cs" />
+    <Compile Include="BusinessOwner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

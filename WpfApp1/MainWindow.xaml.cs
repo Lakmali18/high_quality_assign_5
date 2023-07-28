@@ -121,6 +121,7 @@ namespace WpfApp1
                 newProperties.HouseSize = properties.HouseSize;
                 newProperties.PaddockSize = properties.PaddockSize;
                 newProperties.CreditCardNumber = properties.CreditCardNumber;
+
                 string[] arrStr = properties.GetType().ToString().Split('.');
                 string fullType = arrStr[arrStr.Length - 1];
                 newProperties.Type = fullType.Substring(0, fullType.Length);
